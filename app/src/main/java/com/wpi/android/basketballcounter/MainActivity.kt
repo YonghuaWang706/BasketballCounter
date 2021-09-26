@@ -149,6 +149,7 @@ class MainActivity : AppCompatActivity() {
                 )
             )
             startActivityForResult(intent,REQUEST_CODE_SAVE);
+            Log.d(TAG, "save button in MainActivity clicked")
 
         }
 
@@ -165,6 +166,8 @@ class MainActivity : AppCompatActivity() {
         if (requestCode == REQUEST_CODE_SAVE) {
             val isNice : Boolean = data?.getBooleanExtra(NICE_MATCH, false) ?: false
             if (isNice){
+                Log.d(TAG, "receive feedback from save activity")
+
                 Toast.makeText(this, R.string.nice_match_toast, Toast.LENGTH_SHORT)
                     .show()
             }
